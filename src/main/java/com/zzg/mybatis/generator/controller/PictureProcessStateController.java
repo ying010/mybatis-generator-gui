@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-
 import static javafx.scene.paint.Color.DARKSEAGREEN;
 
 public class PictureProcessStateController {
@@ -33,6 +32,7 @@ public class PictureProcessStateController {
     private double initY;
     private Stage parentStage;
     private final Button button = new Button("");
+
     public void setDialogStage(Stage stage) {
         this.parentStage = stage;
     }
@@ -87,8 +87,8 @@ public class PictureProcessStateController {
         button.setOnMouseClicked((event) -> dialogStage.close());
 
         rootGroup.setOnMousePressed((me) -> {
-                initX = me.getScreenX() - dialogStage.getX();
-                initY = me.getScreenY() - dialogStage.getY();
+            initX = me.getScreenX() - dialogStage.getX();
+            initY = me.getScreenY() - dialogStage.getY();
         });
         rootGroup.setOnMouseDragged((me) -> {
             dialogStage.setX(me.getScreenX() - initX);
